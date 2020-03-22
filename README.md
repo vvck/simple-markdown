@@ -1,6 +1,6 @@
-# electron-vue
+# simple-markdown
 
-> a vue frame with electron
+> a simple markdown editor with electron
 
 ## Build Setup
 
