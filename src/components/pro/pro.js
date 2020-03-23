@@ -103,7 +103,7 @@ export default {
             } else {
                 this.insertContent('****');
                 this.setCursor(line, ch + 2);
-            }
+            }   
         },
         insertItalic() {// 斜体
             const {editor, lastPos = {}} = this;
@@ -292,6 +292,20 @@ export default {
                     }
                 }
             }, 20);
+        },
+        changePreview()
+        {
+            if(this.preview )
+            {
+                this.$refs.markdown.style.marginTop = "32px";     
+                this.$refs.markdown.style.height = "calc(100%-32px)";          
+            }
+            else
+            {
+                this.$refs.markdown.style.marginTop = "72px";
+                this.$refs.markdown.style.height = "calc(100%-32px)";
+            }
+
         },
         onDelete() {// 删除时,以回车为界分割，如果数组最后一个元素为''时，将行一次插入的共嗯那个置为空，避免回车时再次插入
             const lines = this.currentValue.split('\n');

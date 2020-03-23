@@ -11,10 +11,7 @@ function createWindow () {
     width: 1280,
     height: 720,
     useContentSize: true,
-    frame: false,
-    webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
-    }
+    frame: false
   })
 
   mainWindow.webContents.openDevTools({mode:'right'});

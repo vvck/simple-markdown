@@ -129,7 +129,7 @@
             </li>
             <li v-if="tools.preview" name="预览">
                 <span
-                    @click="preview = true"
+                    @click="preview = true , changePreview()"
                     class="iconfont icon-preview"
                 ></span>
             </li>
@@ -157,7 +157,7 @@
         <div
             class="close-preview"
             v-show="preview && !isPreview"
-            @click="preview = false"
+            @click="preview = false ,changePreview()"
         >
             <span class="iconfont icon-close"></span>
         </div>
@@ -165,6 +165,7 @@
         <div
             class="markdown-content"
             :style="{ background: preview ? '#fff' : '' }"
+            ref="markdowncontent"
         >
             <div
                 class="codemirror"
